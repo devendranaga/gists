@@ -33,6 +33,8 @@ int main(int argc, char **argv[])
         if (evt.data.fd == stdin_fd) {
             printf("read from stdin\n");
             char buf[100];
+
+            memset(buf, 0, sizeof(buf));
             read(stdin_fd, buf, sizeof(buf));
             printf("input %s\n", buf);
         }
