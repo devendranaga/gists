@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/destructor.dir/destructor.o  -o destructor -rdynamic 

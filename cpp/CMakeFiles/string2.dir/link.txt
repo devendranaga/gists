@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/string2.dir/string2.o  -o string2 -rdynamic 

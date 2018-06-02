@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/devnaga/cpp/vector_sort.cpp
+iostream
+-
+vector
+-
+sys/types.h
+-
+sys/stat.h
+-
+fcntl.h
+-
+algorithm
+-
+unistd.h
+-
+
