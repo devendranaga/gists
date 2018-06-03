@@ -1,1 +1,0 @@
-/usr/bin/c++      CMakeFiles/namespaces.dir/namespaces.o  -o namespaces -rdynamic 

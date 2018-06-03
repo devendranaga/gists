@@ -1,1 +1,0 @@
-/usr/bin/c++      CMakeFiles/vector_sort.dir/vector_sort.o  -o vector_sort -rdynamic 
