@@ -26,7 +26,8 @@ int main(int argc, char **argv)
     double available = (vfs_.f_bfree * vfs_.f_frsize * 1.0) / (1024 * 1024 * 1024);
 
     fprintf(stderr, "total %f GB available %f GB used %f GB\n", total_disk, available, total_disk - available);
-    fprintf(stderr, "disk size [%s] %f\n", argv[1], ((total_disk - available) / total_disk) * 100);
+    fprintf(stderr, "used disk size [%s] %f\n", argv[1], ((total_disk - available) / total_disk) * 100);
+    fprintf(stderr, "free disk size [%s] %f\n", argv[1], ((available) / total_disk) * 100);
     return 0;
 }
 
