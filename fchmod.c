@@ -25,9 +25,10 @@ int main(int argc, char **argv)
     ret = fchmod(fd, 0777);
     if (ret < 0) {
         fprintf(stderr, "fchmod failure %s\n", strerror(errno));
+    } else {
+        fprintf(stderr, "succesfully set permissions of file %s\n", argv[1]);
     }
 
-    fprintf(stderr, "succesfully set permissions of file %s\n", argv[1]);
     close(fd);
 
     // perform stat() to verify
