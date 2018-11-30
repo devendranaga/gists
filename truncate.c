@@ -36,7 +36,9 @@ int main(int argc, char **argv)
         return -1;
     }
 
-    fprintf(stderr, "truncated file %s\n", argv[1]);
+    size = filesize(argv[1]);
+
+    fprintf(stderr, "truncated file %s file size %ld\n", argv[1], size);
 
     fprintf(stderr, "unlinking %s\n", argv[1]);
 
@@ -57,6 +59,10 @@ int main(int argc, char **argv)
         fprintf(stderr, "failed to ftruncate file to 1M error: %s\n", strerror(errno));
         return -1;
     }
+
+    size = filesize(argv[1]);
+
+    fprintf(stderr, "truncated file %s filesize %ld\n", argv[1], size);
 
     return 0;
 }
