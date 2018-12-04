@@ -3,11 +3,11 @@
 
 int main()
 {
-    char *path_ = getenv("PATH");
+    char *path_ = getenv("TEST_C_ENV");
     if (!path_) {
-        printf("PATH variable can't be found\n");
+        printf("TEST_C_ENV variable can't be found\n");
     } else {
-        printf("PATH %s\n", path_);
+        printf("TEST_C_ENV %s\n", path_);
     }
 
     return 0;
