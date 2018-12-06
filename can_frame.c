@@ -35,23 +35,33 @@ int main(int argc, char **argv)
         return -1;
     }
 
-    canframe.can_id = 0x600;
-    canframe.can_dlc = 8;
-    canframe.data[0] = 0x44;
-    canframe.data[1] = 0x44;
-    canframe.data[2] = 0x44;
-    canframe.data[3] = 0x44;
-    canframe.data[4] = 0x44;
-    canframe.data[5] = 0x44;
-    canframe.data[6] = 0x44;
-    canframe.data[7] = 0x44;
+    static int i = 0;
 
     while (1) {
         sleep(1);
 
+
+        canframe.can_id = 0x600 + i;
+        canframe.can_dlc = 8;
+        canframe.data[0] = 0x44 + i;
+        canframe.data[1] = 0x44 + i;
+        canframe.data[2] = 0x44 + i;
+        canframe.data[3] = 0x44 + i;
+        canframe.data[4] = 0x44 + i;
+        canframe.data[5] = 0x44 + i;
+        canframe.data[6] = 0x44 + i;
+        canframe.data[7] = 0x44 + i;
+
+        printf("write %02x\n", canframe.can_id);
         ret = write(fd, (void *)&canframe, sizeof(canframe));
         if (ret < 0) {
             return -1;
+        }
+
+        i ++;
+
+        if (i > 4) {
+            i = 0;
         }
     }
 
