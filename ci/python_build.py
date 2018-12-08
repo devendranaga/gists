@@ -7,12 +7,12 @@ import os
 
 os.chdir('../')
 
-exceptions = ['lib.c', 'md_list.c', 'hash_Test.c', 'cipher_list.c', 'dlopen.c']
+exceptions = ['lib.c', 'md_list.c', 'hash_Test.c', 'cipher_list.c', 'dlopen.c', 'seccomp_init.c']
 
 for file in glob.glob('*.c'):
     print(file)
     if file not in exceptions:
-        x = os.system('gcc ' + file + ' -ldl -rdynamic -pthread -lm -lseccomp')
+        x = os.system('gcc ' + file + ' -ldl -rdynamic -pthread -lm')
         if x != 0:
             exit(1)
 
