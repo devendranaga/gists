@@ -2,6 +2,7 @@ language: c
 compiler: gcc
 before_install:
   - pip install --user cpp-coveralls
+  - sudo apt install libseccomp-dev
 
 script: cd ci && python python_build.py
 
